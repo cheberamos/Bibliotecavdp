@@ -1,0 +1,287 @@
+*{
+    box-sizing: border-box;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: Acme;
+    color:black;
+    font-size: 1rem;
+}
+h1{
+    font-size: 3.5vw;
+}
+h2{
+    font-size: 2.5vw;
+}
+h3{
+    font-size: 1.5vw;
+}
+a{
+    text-decoration:none;
+}
+.header{
+    margin: 0px auto;
+	max-width: 1200px;
+    Box-shadow: 0 0 0.5rem rgb(83 78 86 / 50%);
+    display: grid;
+    grid-template-columns: 10% 25% 25% 25% 15%;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "logo encabezado encabezado encabezado libros"
+                         "nav1 nav1       nav1       nav1       social";
+    }
+        .cabecera{
+            background-image: linear-gradient(rgba(189,46,49,255) 75%, #7b2d2d);
+            border-bottom: 10px rgba(29,142,80,255) solid;
+        }
+        .logo{
+            grid-area: logo;
+        }
+            .logo img{
+                    max-width: 60%;
+            }
+        .encabezado{
+            margin-top: 0px;
+            font-stretch: ultra-expanded;
+            grid-area: encabezado;
+            }
+            .encabezado h1{
+                color: white;
+                letter-spacing: 3px;
+            }
+            .encabezado h2, .encabezado h3{
+                color: white;
+            }
+        .libros{
+            grid-area: libros;
+        }
+            .libros img{
+                max-width: 100%;
+            }
+        .nav1{
+            padding:5px 0px;
+            text-align: center;
+            /* border: 2px; */
+            /* border-style: solid; */
+            /* border-color: rgb(7,210,172,1); */
+            /* background-color: rgb(7,210,172,0.5); */
+            color:rgb(7,210,172,1); ;
+            flex: 5 1 auto;
+            align-items: center;
+            justify-content: space-between;
+            grid-area: nav1;
+        }
+        .nav1 a{
+            flex: 1 1 auto;
+            padding: 0 10px;
+            background-color: rgba(5, 168, 138, 0.3);
+        }
+        .nav1 a:hover{
+            background-color: rgba(5, 168, 138, 0.8);
+        }
+        .social{
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background: rgba(250,223,178,255);
+            grid-area: social;
+        }
+        .footer{
+            margin: 0px auto;
+            /* border: black 2px solid; */
+            max-width: 1200px;
+            Box-shadow: 0 0 0.5rem rgb(83 78 86 / 50%);
+                /* width: 90%; */
+            display: grid;
+            grid-template-columns: 10% 25% 25% 25% 15%;
+            grid-template-rows: repeat(1, auto);
+            grid-template-areas: "logo2 pie2      address    address    address";
+        }
+        .pie{
+            border-top: rgba(189,46,49,255) 10px solid;
+            top: 10px;
+            left: 0px;
+            background-image: linear-gradient(#4b4b4d 75%, #0c0c0c);
+            margin-top: 0px;
+            padding-top: 0px;
+    
+        }
+            .logo2{
+                grid-area: logo2;
+            }
+                .logo2 img {
+                    max-width: 50%;
+                }
+            .pie2{
+                grid-area: pie2;
+            }
+            .pie2 h2,.pie2 h3, .pie2 h4{
+                color:white;
+            }
+        .address{
+             width: 100%;
+            grid-area: address;
+            text-align: center;
+        }
+        .nueva::first-line{
+            background-color: rgb(7,210,172,0.5);
+        }
+        .tel img{
+            max-width: 5%;
+        }
+.main{
+            margin: 0px auto;
+            /* border: black 2px solid; */
+            max-width: 1200px;
+            Box-shadow: 0 0 0.5rem rgb(83 78 86 / 50%);
+                /* width: 90%; */
+            display: grid;
+            grid-template-columns: 10% 25% 25% 25% 15%;
+            grid-template-rows: repeat(4, auto);
+            grid-template-areas: "novedades novedades novedades novedades aside"
+                                 "novedades novedades novedades novedades aside"
+                                 "nav2  nav2      nav2       nav2       aside";
+    }
+    .novedades{
+        /* border: blue 2px solid; */
+        grid-area: novedades;
+        display: flex;
+        flex-wrap: wrap;
+    }
+        .article{
+            border: rgba(250,223,178,255) 2px solid;
+            flex:1 1 40%;
+        }
+        .article img{
+            max-width: 100%;
+        }
+        .article a {
+            display: inline-block;
+            background-color: rgba(29,142,80,255);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .article a:hover {
+            background-color: rgba(5, 168, 138, 200);;
+            transition: 0.3s;
+        }
+        .nav2{
+            background-color: rgba(250,223,178,255);
+            text-transform: uppercase;
+            padding: 0 10px;
+            grid-area: nav2;
+        }
+        .nav2 a{
+            padding: 0 10px;
+        }
+    .aside{
+        grid-area: aside;
+        margin:0 5px;
+        display: flex;
+        flex-direction: column;
+    }
+        .widget{
+            border-top: rgba(29,142,80,100) 2px solid;
+            padding: 20px 0px;
+        }
+            .avisos img{
+                max-width: 80%;
+            }
+
+    
+/*De 601 a 800px*/
+@media all and (max-width: 800px){
+    .header{
+        grid-template-columns: 10% 40% 35% 15%;
+
+        grid-template-rows: repeat(2, auto);
+    
+        grid-template-areas: "logo encabezado encabezado libros"
+                             "nav1 nav1       nav1       social"
+    }
+    .main{
+        grid-template-columns: 10% 40% 35% 15%;
+    
+        grid-template-rows: repeat(7, auto);
+    
+        grid-template-areas: "novedades novedades novedades novedades"
+                             "novedades novedades novedades novedades"
+                             "nav2  nav2      nav2       nav2       "
+                             "aside aside aside aside"
+                             "logo2 pie2      address    address";
+        }
+    .footer{
+    grid-template-columns: 10% 40% 35% 15%;
+
+    grid-template-rows: repeat(1, auto);
+
+    grid-template-areas:     "logo2 pie2      address    address";
+    }
+
+    .section{
+        flex-direction: column;
+    }
+    .article{
+        border: lightsalmon 2px solid;
+        flex:1 1 100%;
+    }
+
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .aside{
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+/*De 401 a 600px*/
+@media all and (max-width: 600px){
+    .header, .main{
+        grid-template-columns: 10% 75% 15%;
+    }
+    .header{
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: "logo encabezado libros"
+                             "nav1 nav1       social";
+        }
+    .footer{
+            grid-template-columns: 10% 15% 75%;
+            grid-template-rows: repeat(1, auto);
+            grid-template-areas:    "logo2 pie2 address";
+            }
+    .main{
+        /* grid-template-columns: 10% 75% 15%; */
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas: "novedades novedades novedades"
+                             "novedades novedades novedades"
+                             "nav2  nav2      nav2   "
+                             "aside aside aside ";
+        }
+    .articulos{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+/*De 0 a 400px*/
+@media all and (max-width: 400px){
+    .aside{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .avisos img{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        max-width: 50%;
+    }
+}    

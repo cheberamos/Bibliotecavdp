@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: Acme;
+    color:black;
+    font-size: 1rem;
+}
+h1{
+    font-size: 3.5vw;
+}
+h2{
+    font-size: 2.5vw;
+}
+h3{
+    font-size: 1.5vw;
+}
+a{
+    text-decoration:none;
+}
+.header{
+    margin: 0px auto;
+	max-width: 1200px;
+    Box-shadow: 0 0 0.5rem rgb(83 78 86 / 50%);
+    display: grid;
+    grid-template-columns: 10% 25% 25% 25% 15%;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "logo encabezado encabezado encabezado libros"
+                         "nav1 nav1       nav1       nav1       social";
+    }
+        .cabecera{
+            background-image: linear-gradient(rgba(189,46,49,255) 75%, #7b2d2d);
+            border-bottom: 10px rgba(29,142,80,255) solid;
+        }
+        .logo{
+            grid-area: logo;
+        }
+            .logo img{
+                    max-width: 60%;
+            }
+        .encabezado{
+            margin-top: 0px;
+            font-stretch: ultra-expanded;
+            grid-area: encabezado;
+            }
+            .encabezado h1{
+                color: white;
+                letter-spacing: 3px;
+            }
+            .encabezado h2, .encabezado h3{
+                color: white;
+            }
+        .libros{
+            grid-area: libros;
+        }
+        /* Animación libro que se abre en el encabezado, señalar con el mouse el vértice para que se cierre */
+        .libro{position: relative;left: 0px; top: 20px;list-style: none }
+            .tapa {
+                width: 5px; height: 4rem;background:#222120; position: absolute; z-index: index 7;
+            }
+        .pagina {  width: 2px;height: 4rem; background: white; position: absolute;}
+        .libro li{transform-origin: bottom;}
+        .libro li:nth-of-type(1){transform: rotate(-70deg);z-index: index 7;}
+        .libro li:nth-of-type(2){transform: rotate(-50deg);z-index: index 1;}
+        .libro li:nth-of-type(3){transform: rotate(-30deg);z-index: index 2;}
+        .libro li:nth-of-type(4){transform: rotate(0 deg);z-index: index 3;}
+        .libro li:nth-of-type(5){transform: rotate(30deg);z-index: index 4;}
+        .libro li:nth-of-type(6){transform: rotate(50deg);z-index: index 5;}
+        .libro li:nth-of-type(7){transform: rotate(70deg);z-index: index 7;}
+
+        .libro li:nth-of-type(1){transition: 0.25s;}
+        .libro li:nth-of-type(2){transition: 0.4s;}
+        .libro li:nth-of-type(3){transition: 0.55s;}
+        .libro li:nth-of-type(4){transition: 0.7s;}
+        .libro li:nth-of-type(5){transition: 0.55s;}
+        .libro li:nth-of-type(6){transition: 0.4s;}
+        .libro li:nth-of-type(7){transition: 0.25s;}
+        
+        .libro:hover li:nth-of-type(1){transform: rotateY(70deg);transition:2.5s;}
+        .libro:hover li:nth-of-type(2){transform: rotateY(50deg);transition:1.9s;}
+        .libro:hover li:nth-of-type(3){transform: rotateY(30deg);transition:1.5s;}
+        .libro:hover li:nth-of-type(4){transform: rotateY(0deg);transition:1s;}
+        .libro:hover li:nth-of-type(5){transform: rotateY(-30deg);transition:1.5s;}
+        .libro:hover li:nth-of-type(6){transform: rotateY(-50deg);transition:1.9s;} 
+        .libro:hover li:nth-of-type(7){transform: rotateY(-70deg);transition:2.5s;} 
+        /*-------------------------------------------------------------------------------------------------*/
+        .nav1{
+            padding:5px 0px;
+            text-align: center;
+            color:rgb(7,210,172,1); ;
+            flex: 5 1 auto;
+            align-items: center;
+            justify-content: space-between;
+            grid-area: nav1;
+        }
+        .nav1 a{
+            flex: 1 1 auto;
+            padding: 5px 10px;
+            background-color: rgba(5, 168, 138, 0.3);
+        }
+        .nav1 a:hover{
+            background-color: rgba(5, 168, 138, 0.8);
+        }
+        .social{
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background: rgba(250,223,178,255);
+            grid-area: social;
+        }
+        .footer{
+            margin: 0px auto;
+            /* border: black 2px solid; */
+            max-width: 1200px;
+            Box-shadow: 0 0 0.5rem rgb(83 78 86 / 50%);
+                /* width: 90%; */
+            display: grid;
+            grid-template-columns: 10% 25% 25% 25% 15%;
+            grid-template-rows: repeat(1, auto);
+            grid-template-areas: "logo2 pie2      address    address    address";
+        }
+        .pie{
+            border-top: rgba(189,46,49,255) 10px solid;
+            top: 10px;
+            left: 0px;
+            background-image: linear-gradient(#4b4b4d 75%, #0c0c0c);
+            margin-top: 0px;
+            padding-top: 0px;
+    
+        }
+            .logo2{
+                grid-area: logo2;
+            }
+                .logo2 img {
+                    max-width: 50%;
+                }
+            .pie2{
+                grid-area: pie2;
+            }
+            .pie2 h2,.pie2 h3, .pie2 h4{
+                color:white;
+            }
+        .address{
+             width: 100%;
+            grid-area: address;
+            text-align: center;
+        }
+        .nueva::first-line{
+            background-color: rgb(7,210,172,0.5);
+        }
+        .tel img{
+            max-width: 5%;
+        }
+
+
+    
+/*De 601 a 800px*/
+@media all and (max-width: 800px){
+    .header{
+        grid-template-columns: 10% 40% 35% 15%;
+
+        grid-template-rows: repeat(2, auto);
+    
+        grid-template-areas: "logo encabezado encabezado encabezado"
+                             "nav1 nav1       nav1       social"
+    }
+    .libros{display: none;}
+ 
+    .footer{
+    grid-template-columns: 10% 40% 35% 15%;
+
+    grid-template-rows: repeat(1, auto);
+
+    grid-template-areas:     "logo2 pie2      address    address";
+    }
+
+     .menu{
+        flex-direction: column;
+        height: auto;
+    }
+
+ }
+
+/*De 401 a 600px*/
+@media all and (max-width: 600px){
+    .header, .main{
+        grid-template-columns: 10% 75% 15%;
+    }
+    .header{
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: "logo encabezado encabezado"
+                             "nav1 nav1       social";
+        }
+    .footer{
+            grid-template-columns: 10% 15% 75%;
+            grid-template-rows: repeat(1, auto);
+            grid-template-areas:    "logo2 pie2 address";
+            }
+ 
+}
+
+/*De 0 a 400px*/
+@media all and (max-width: 400px){
+   
+}    
