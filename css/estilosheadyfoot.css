@@ -103,6 +103,7 @@ a{
         }
         .nav1 a:hover{
             background-color: rgba(5, 168, 138, 0.8);
+            transition: 0.3s;
         }
         .social{
             display: flex;
@@ -110,6 +111,10 @@ a{
             align-items: center;
             background: rgba(250,223,178,255);
             grid-area: social;
+        }
+        .social a:hover{
+            background-color: rgba(189,46,49,255);
+            transition: 0.3s;
         }
         .footer{
             margin: 0px auto;
